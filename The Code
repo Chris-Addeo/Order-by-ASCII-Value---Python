@@ -1,0 +1,21 @@
+print("Report in ascending order by ASCII value: ")
+phrase = input("Enter a phrase: ")
+
+clean_phrase = phrase.lower()
+clean_phrase = clean_phrase.replace(" ", "")
+
+final_phrase = ""
+
+for g in clean_phrase:
+    if g.isalnum():
+        final_phrase += g
+
+string_dict = {}
+for c in final_phrase:
+    if c in string_dict.keys():
+        string_dict[c] += 1
+    else:
+        string_dict[c] = 1
+
+for k,v in sorted(string_dict.items()):
+    print(k,v)
